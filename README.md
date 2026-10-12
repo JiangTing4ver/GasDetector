@@ -65,6 +65,11 @@
 | pyOCD | `C:\Users\<用户名>\.pyocd-venv\Scripts\pyocd.exe` | 烧录 |
 | Arm GNU Toolchain | 12.2 及以上 | 调试（可选） |
 
+> **路径配置说明**：pyOCD 与 Keil 的安装路径统一维护在 [`.vscode/settings.json`](.vscode/settings.json)
+> 的两个自定义项 `stm32Toolchain.pyocdPath` 与 `stm32Toolchain.keilBinPath` 中，
+> `tasks.json` 与 `launch.json` 通过 `${config:...}` 引用。
+> **更换环境时只需修改这一处**，无需逐个文件查找。
+
 ### 2. 编译
 
 ```bat

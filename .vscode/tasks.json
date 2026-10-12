@@ -24,7 +24,7 @@
     {
       "label": "Flash only (pyOCD)",
       "type": "shell",
-      "command": "C:/Users/susoc/.pyocd-venv/Scripts/pyocd.exe",
+      "command": "${config:stm32Toolchain.pyocdPath}",
       "args": ["load", "-t", "stm32f103rc", "${workspaceFolder}/build/GasDetector.hex"],
       "options": { "cwd": "${workspaceFolder}" },
       "problemMatcher": [],
@@ -56,7 +56,7 @@
     {
       "label": "Flash (pyOCD + ST-Link)",
       "type": "shell",
-      "command": "C:/Users/susoc/.pyocd-venv/Scripts/pyocd.exe",
+      "command": "${config:stm32Toolchain.pyocdPath}",
       "args": ["load", "-t", "stm32f103rc", "${workspaceFolder}/build/GasDetector.hex"],
       "options": { "cwd": "${workspaceFolder}" },
       "dependsOn": "Build",
@@ -78,7 +78,7 @@
     {
       "label": "Start GDB server (pyOCD, for Attach)",
       "type": "shell",
-      "command": "C:/Users/susoc/.pyocd-venv/Scripts/pyocd.exe",
+      "command": "${config:stm32Toolchain.pyocdPath}",
       "args": ["gdbserver", "-t", "stm32f103rc", "--port", "3333"],
       "options": { "cwd": "${workspaceFolder}" },
       "isBackground": true,
@@ -95,7 +95,7 @@
     {
       "label": "Erase chip (pyOCD)",
       "type": "shell",
-      "command": "C:/Users/susoc/.pyocd-venv/Scripts/pyocd.exe",
+      "command": "${config:stm32Toolchain.pyocdPath}",
       "args": ["erase", "-t", "stm32f103rc", "--mass"],
       "options": { "cwd": "${workspaceFolder}" },
       "problemMatcher": [],
@@ -104,7 +104,7 @@
     {
       "label": "Show size (fromelf)",
       "type": "shell",
-      "command": "D:/apps/keil5MDK/ARM/ARMCC/bin/fromelf.exe",
+      "command": "${config:stm32Toolchain.keilBinPath}/fromelf.exe",
       "args": ["--text", "-z", "${workspaceFolder}/build/GasDetector.axf"],
       "options": { "cwd": "${workspaceFolder}" },
       "problemMatcher": [],
